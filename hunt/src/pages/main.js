@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import api from '../services/api'
+import api from '../services/api';
 
 import { View, Text, FlatList, TouchableOpacity, StyleSheet,  } from 'react-native';
 import Axios from 'axios';
@@ -43,11 +43,11 @@ export default class Main extends Component {
 
   renderItem = ({ item }) => (
     <View style = {styles.productContainer}>
-      <Text style = {styles.productTitle}>{item.title} opa</Text>
+      <Text style = {styles.productTitle}>{item.title}</Text>
       <Text style = {styles.productDescription}>{item.description}</Text>
       <TouchableOpacity style = {styles.productButton}
        onPress={() => {
-        this.props.navigation.navigate(`Product`)
+        this.props.navigation.navigate(`Product`, { product: item }) 
        }}>
 
         <Text  style = {styles.productButtonText} >Acessar</Text>
